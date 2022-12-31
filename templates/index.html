@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container d-flex flex-column align-items-center justify-content-center" style="padding: 0; margin-top: 5rem;">
+<h2>Dummy Image Classifier</h2>
+<p>Identify objects in your image by clicking upload image.</p>
+    <form id="upload-file" method="post" enctype="multipart/form-data" class="mx-auto">
+            <label for="imageUpload" class="upload-label">
+                Upload image
+            </label>
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview"></div>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-gg w-100" id="btn-predict">Predict!</button>
+    </div>
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span color="green"></span>
+    </h3>
+
+</div>
+
+{% endblock %}
